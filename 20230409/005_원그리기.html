@@ -17,6 +17,9 @@
     >
 
     <script>
+      function 라디안(각도) {
+        return (각도 * Math.PI) / 180;
+      }
       // beginPath
       // arc
       // closePath
@@ -24,7 +27,13 @@
       const canvas = document.querySelector(".canvas");
       const context = canvas.getContext("2d");
 
-      context.arc();
+      context.beginPath();
+      context.arc(300, 200, 50, 0, 라디안(360), true);
+      context.stroke();
+
+      context.beginPath();
+      context.arc(500, 100, 20, 0, 라디안(360), false);
+      context.stroke();
     </script>
   </body>
 </html>
